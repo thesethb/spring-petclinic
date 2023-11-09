@@ -12,20 +12,19 @@ pipeline {
       parallel {
         stage('Test') {
           steps {
-            sh '''mvn clean verify sonar:sonar 
-
-
-
-
-
-
--Dsonar.projectKey=devops2 -Dsonar.projectName=\'devops2\' -Dsonar.token=sqb_923f1abc85545789f0792c1cc22de9bf4e6f12b2'''
+            sh '''mvn clean verify sonar:sonar \\
+  -Dsonar.projectKey=devops2 \\
+  -Dsonar.projectName=\'devops2\' \\
+  -Dsonar.host.url=http://localhost:9000 \\
+  -Dsonar.token=sqp_2890044f11c5fb9ac229b946c818b4097393bb39'''
           }
         }
 
         stage('Deploy') {
           steps {
-            sh 'java -jar target/*.jar'
+            sh 'cd target'
+            sh 'ls'
+            sh 'java -jar *.jar'
           }
         }
 
