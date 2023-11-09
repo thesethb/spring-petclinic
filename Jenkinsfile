@@ -9,15 +9,26 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        sh '''mvn clean verify sonar:sonar 
+      parallel {
+        stage('Test') {
+          steps {
+            sh '''mvn clean verify sonar:sonar 
 
 
 
 
 
 
--Dsonar.projectKey=devops -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqb_edf5bc86981026ab42945e0d2f62c7226440fede'''
+-Dsonar.projectKey=devops2 -Dsonar.projectName=\'devops2\''''
+          }
+        }
+
+        stage('Deploy') {
+          steps {
+            sh 'java -jar target/*.jar'
+          }
+        }
+
       }
     }
 
