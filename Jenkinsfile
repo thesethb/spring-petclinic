@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn clean install'
+        sh './mvnw package'
         echo 'Build complete'
       }
     }
@@ -19,7 +19,7 @@ pipeline {
 
 
 
--Dsonar.projectKey=devops2 -Dsonar.projectName=\'devops2\''''
+-Dsonar.projectKey=devops2 -Dsonar.projectName=\'devops2\' -Dsonar.token=sqb_923f1abc85545789f0792c1cc22de9bf4e6f12b2'''
           }
         }
 
