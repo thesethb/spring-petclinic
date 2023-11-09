@@ -17,8 +17,7 @@ pipeline {
 
 
 
--Dsonar.projectKey=devops -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_ddff216d7cd0e2101aa88a5ff151a33f3705fe47
-'''
+-Dsonar.projectKey=devops -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqb_edf5bc86981026ab42945e0d2f62c7226440fede'''
       }
     }
 
