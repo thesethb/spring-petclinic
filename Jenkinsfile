@@ -22,9 +22,9 @@ pipeline {
 
         stage('Deploy') {
           steps {
-            sh 'cd target'
+            sh 'cd target; ls'
             sh 'ls'
-            sh 'java -jar *.jar'
+            sh 'java -jar target/*.jar'
           }
         }
 
