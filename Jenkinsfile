@@ -24,7 +24,7 @@ pipeline {
           steps {
             sh 'cd target; ls'
             sh 'ls'
-            sh 'java -jar target/*.jar --port = 8081'
+            sh 'java -jar target/*.jar --server.port = 8081'
           }
         }
 
