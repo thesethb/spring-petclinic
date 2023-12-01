@@ -12,7 +12,7 @@ pipeline {
 
         stage('Test Ansible') {
           steps {
-            sh 'ansible-playbook /etc/ansible/playbook.yaml'
+            sh 'ansiblePlaybook credentialsId: \'devops2\', installation: \'Ansible\', playbook: \'/etc/ansible/playbook.yaml\', vaultTmpPath: \'\''
           }
         }
 
