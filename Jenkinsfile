@@ -12,7 +12,7 @@ pipeline {
 
         stage('Test Ansible') {
           steps {
-            sh 'cd /etc/ansible; ls; ansiblePlaybook /etc/ansible/playbook.yml credentialsId: \'devops2\', disableHostKeyChecking: true, installation: \'Ansible\',  vaultTmpPath: \'\''
+            sh 'cd /etc/ansible; ls; ansible-playbook /etc/ansible/playbook.yml credentialsId: \'devops2\', disableHostKeyChecking: true, installation: \'Ansible\',  vaultTmpPath: \'\''
           }
         }
 
